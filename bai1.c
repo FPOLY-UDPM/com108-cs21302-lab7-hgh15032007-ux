@@ -11,4 +11,29 @@
 
 
 // VIẾT CODE Ở ĐÂY
+#include <stdio.h>
+#include <string.h> 
 
+int main() {
+    char a[100];
+    int NguyenAm = 0; 
+    int PhuAm = 0; 
+    int i = 0;
+    printf("Xin moi nhap vao chuoi: ");
+    gets(a);
+    strlwr(a);
+    while (a[i] != '\0') {
+        if (a[i] >= 'a' && a[i] <= 'z') {
+            if (a[i] == 'a' || a[i] == 'e' || a[i] == 'i' || a[i] == 'o' || a[i] == 'u'|| a[i] == 'y') {
+                NguyenAm++; 
+            } else {
+                PhuAm++; 
+            }
+        }
+        char c = a[i];
+        i++;
+    }
+    printf("Chuoi sau khi chuyen ve chu thuong: %s\n", a);
+    printf("Ket qua: %d nguyen am va %d phu am.", NguyenAm, PhuAm);
+    return 0;
+}
